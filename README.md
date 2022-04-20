@@ -5,3 +5,5 @@
 
 # 4d-plugin-custom-url-scheme
 Register a custom URL scheme.
+
+[miyako.github.io](https://miyako.github.io/2022/04/20/protocol-handler.html)
