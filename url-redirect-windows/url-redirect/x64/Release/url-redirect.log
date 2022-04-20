@@ -1,0 +1,9 @@
+﻿  main.cpp
+main.cpp(66): warning C4244: 'argument': conversion from 'WPARAM' to 'DWORD', possible loss of data
+  Generating code
+  1 of 69 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  url-redirect.vcxproj -> C:\Users\miyako\Desktop\url-redirect\x64\Release\url-redirect.exe
+  url-redirect.vcxproj -> C:\Users\miyako\Desktop\url-redirect\x64\Release\url-redirect.pdb (Full PDB)

@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\miyako\desktop\url-redirect\url-redirect\main.cpp(66): warning C4244: 'argument': conversion from 'WPARAM' to 'DWORD', possible loss of data
+  url-redirect.vcxproj -> C:\Users\miyako\Desktop\url-redirect\x64\Debug\url-redirect.exe
+  url-redirect.vcxproj -> C:\Users\miyako\Desktop\url-redirect\x64\Debug\url-redirect.pdb (Full PDB)

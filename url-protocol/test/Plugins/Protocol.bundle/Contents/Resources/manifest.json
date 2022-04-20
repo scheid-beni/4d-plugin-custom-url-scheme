@@ -1,0 +1,11 @@
+{
+	"name": "Protocol",
+	"id": 20000,
+	"commands": [
+		{
+			"theme": "Protocol",
+			"syntax": "REGISTER PROTOCOL(&T;&T)",
+			"threadSafe": true
+		}
+	]
+}
