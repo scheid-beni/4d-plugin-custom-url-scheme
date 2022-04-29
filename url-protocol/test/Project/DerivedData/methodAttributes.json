@@ -1,10 +1,10 @@
 {
 	"methods": {
-		"MYCALLBACK": {
-			"timeStamp": "2022-04-20T10:47:41.000Z"
-		},
 		"TEST": {
 			"timeStamp": "2022-04-20T10:47:43.000Z"
+		},
+		"MYCALLBACK": {
+			"timeStamp": "2022-04-20T10:47:41.000Z"
 		}
 	}
 }

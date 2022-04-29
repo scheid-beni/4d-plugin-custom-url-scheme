@@ -629,7 +629,7 @@ void listenerLoopExecuteMethod()
         
         PA_ClearVariable(&params[0]);
 
-    }else
+    }else if(customurl::LISTENER_METHOD.length() != 0)
     {
         PA_Variable    params[2];
         params[0] = PA_CreateVariable(eVK_Unistring);
@@ -668,7 +668,14 @@ static void Callback(CFNotificationCenterRef center,
         
         if([url getCString:(char *)&buf[0] maxLength:size encoding:NSUnicodeStringEncoding]){
             URL = CUTF16String((const PA_Unichar *)&buf[0], len);
-            customurl::CUSTOM_URL.push_back(URL);
+            
+            if(1)
+            {
+                std::lock_guard<std::mutex> lock(globalMutex);
+                
+                customurl::CUSTOM_URL.push_back(URL);
+            }
+            
             listenerLoopExecute();
         }
     }
@@ -701,7 +708,14 @@ LRESULT CALLBACK Callback(
 					if (lptstrCopy) {
 
 						CUTF16String URL = (PA_Unichar *)lptstrCopy;
-						customurl::CUSTOM_URL.push_back(URL);
+                        
+                        if(1)
+                        {
+                            std::lock_guard<std::mutex> lock(globalMutex);
+                        
+                            customurl::CUSTOM_URL.push_back(URL);
+                        }
+						
 						listenerLoopExecute();
 					}
 					GlobalUnlock(hglbCopy);
