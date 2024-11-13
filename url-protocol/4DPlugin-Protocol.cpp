@@ -213,7 +213,7 @@ static void registerApp(std::wstring& scheme) {
     HKEY hkcommand = NULL;
     DWORD dwDisposition;
     
-	LONG err = RegCreateKeyEx(HKEY_CLASSES_ROOT,
+	LONG err = RegCreateKeyEx(HKEY_CURRENT_USER,
 		scheme.c_str(),
 		0,
 		NULL,
@@ -263,20 +263,20 @@ static void registerApp(std::wstring& scheme) {
         
         wchar_t* ProtocolExecute = L"Software\\Microsoft\\Internet Explorer\\ProtocolExecute";
 
-        HKEY hklm = NULL;
+        HKEY hkcu = NULL;
         
-		LONG err = RegOpenKeyEx(HKEY_LOCAL_MACHINE,
+		LONG err = RegOpenKeyEx(HKEY_CURRENT_USER,
 			ProtocolExecute,
 			REG_OPTION_NON_VOLATILE,
 			KEY_READ | KEY_WRITE | KEY_CREATE_SUB_KEY | KEY_SET_VALUE,
-			&hklm);
+			&hkcu);
 
-        if(hklm != 0) {
+        if(hkcu != 0) {
             
             hkprotocol = NULL;
             
 			err = RegCreateKeyEx(
-				hklm,
+				hkcu,
 				scheme.c_str(),
 				0,
 				NULL,
@@ -299,7 +299,7 @@ static void registerApp(std::wstring& scheme) {
                 RegCloseKey(hkprotocol);
             }
             
-            RegCloseKey(hklm);
+            RegCloseKey(hkcu);
         }
     
         auto func = [](UINT timeout) {
