@@ -213,8 +213,9 @@ static void registerApp(std::wstring& scheme) {
     HKEY hkcommand = NULL;
     DWORD dwDisposition;
     
+    std::wstring keyPath = L"SOFTWARE\\Classes\\" + scheme;
 	LONG err = RegCreateKeyEx(HKEY_CURRENT_USER,
-		scheme.c_str(),
+		keyPath.c_str(),
 		0,
 		NULL,
 		REG_OPTION_NON_VOLATILE,
